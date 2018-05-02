@@ -1,12 +1,12 @@
 {
-  "name": "bcoin",
+  "name": "ymcoin",
   "version": "1.0.0-beta.15",
-  "description": "Bitcoin bike-shed",
+  "description": "Yamacoin bike-shed",
   "license": "MIT",
-  "repository": "git://github.com/bcoin-org/bcoin.git",
-  "homepage": "https://github.com/bcoin-org/bcoin",
+  "repository": "git://github.com/yoshi-z/ymcoin.git",
+  "homepage": "https://github.com/yoshi-z/ymcoin",
   "bugs": {
-    "url": "https://github.com/bcoin-org/bcoin/issues"
+    "url": "https://github.com/yoshi-z/ymcoin/issues"
   },
   "author": "Fedor Indutny <fedor@indutny.com>",
   "contributors": [
@@ -53,10 +53,10 @@
   },
   "main": "./lib/bcoin.js",
   "bin": {
-    "bcoin": "./bin/bcoin",
-    "bcoin-cli": "./bin/cli",
-    "bcoin-node": "./bin/node",
-    "bcoin-spvnode": "./bin/spvnode"
+    "ymcoin": "./bin/bcoin",
+    "ymcoin-cli": "./bin/cli",
+    "ymcoin-node": "./bin/node",
+    "ymcoin-spvnode": "./bin/spvnode"
   },
   "scripts": {
     "clean": "rm -f {browser/,}{bcoin.js,bcoin-worker.js}",

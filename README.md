@@ -1,4 +1,4 @@
-# Bcoin
+# YMcoin (Bcoin ported to Yamacoin)
 
 __NOTE__: The latest release of bcoin contains a non-backward compatible change
 to the rest API. Please read the [changelog]'s "migrating" section for more
@@ -6,12 +6,8 @@ details.
 
 ---
 
-**Bcoin** is an alternative implementation of the bitcoin protocol, written in
+**YMcoin** is an alternative implementation of the Yamacoin protocol, written in
 node.js.
-
-Although still in a beta state, bcoin is well tested and aware of all known
-consensus rules. It is currently used in production as the consensus backend
-and wallet system for [purse.io][purse].
 
 ## Uses
 
@@ -27,10 +23,10 @@ Try it in the browser: http://bcoin.io/browser.html
 ## Install
 
 ```
-$ git clone git://github.com/bcoin-org/bcoin.git
-$ cd bcoin
+$ git clone git://github.com/yoshi-z/ymcoin.git
+$ cd ymcoin
 $ npm install
-$ ./bin/bcoin
+$ ./bin/ymcoin
 ```
 
 See the [Beginner's Guide][guide] for more in-depth installation instructions.
@@ -47,7 +43,7 @@ Join us on [freenode][freenode] in the [#bcoin][irc] channel.
 
 ## Disclaimer
 
-Bcoin does not guarantee you against theft or lost funds due to bugs, mishaps,
+YMcoin does not guarantee you against theft or lost funds due to bugs, mishaps,
 or your own incompetence. You and you alone are responsible for securing your
 money.
 

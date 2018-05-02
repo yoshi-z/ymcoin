@@ -14,7 +14,7 @@ function createGenesisBlock(options) {
 
   if (!flags) {
     flags = Buffer.from(
-      'The Times 03/Jan/2009 Chancellor on brink of second bailout for banks',
+      'He is rendering pasta since 03/Apr/2018.',
       'ascii');
   }
 
@@ -36,7 +36,7 @@ function createGenesisBlock(options) {
         index: 0xffffffff
       },
       script: Script()
-        .pushInt(486604799)
+        .pushInt(503382015)
         .pushPush(Buffer.from([4]))
         .pushData(flags)
         .compile(),
@@ -49,6 +49,9 @@ function createGenesisBlock(options) {
     locktime: 0
   });
 
+  tx.inputs[0].script = script.fromRaw(Buffer.from('48652069732072656e646572696e672070617374612'
+                                                   + '073696e63652030332f4170722f323031382e','hex'));
+    
   const block = new Block({
     version: options.version,
     prevBlock: encoding.NULL_HASH,
@@ -66,44 +69,35 @@ function createGenesisBlock(options) {
 
 const main = createGenesisBlock({
   version: 1,
-  time: 1231006505,
-  bits: 486604799,
-  nonce: 2083236893
+  time: 1522681200,
+  bits: 503382015,
+  nonce: 4454047,
+  flags: new Buffer(
+    'He is rendering pasta since 03/Apr/2018.','ascii'),
+  script: Script.fromArray([
+      new Buffer('a8afa48c98f70c3ccbc173fcdd49b6c62e240326','hex'),
+      opcodes.OP_CHECKSIG
+  ])
 });
 
 const testnet = createGenesisBlock({
   version: 1,
-  time: 1296688602,
-  bits: 486604799,
-  nonce: 414098458
+  time: 1522681200,
+  bits: 503382015,
+  nonce: 5990674,
+  flags: new Buffer(
+    'He is rendering pasta since 03/Apr/2018.','ascii'),
+  script: Script.fromArray([
+      new Buffer('a8afa48c98f70c3ccbc173fcdd49b6c62e240326','hex'),
+      opcodes.OP_CHECKSIG
+  ])
 });
 
 const regtest = createGenesisBlock({
   version: 1,
-  time: 1296688602,
+  time: 1522681200,
   bits: 545259519,
-  nonce: 2
-});
-
-const segnet3 = createGenesisBlock({
-  version: 1,
-  time: 1452831101,
-  bits: 486604799,
-  nonce: 0
-});
-
-const segnet4 = createGenesisBlock({
-  version: 1,
-  time: 1452831101,
-  bits: 503447551,
-  nonce: 0
-});
-
-const btcd = createGenesisBlock({
-  version: 1,
-  time: 1401292357,
-  bits: 545259519,
-  nonce: 2
+  nonce: 77361
 });
 
 util.log(main);
@@ -111,11 +105,6 @@ util.log('');
 util.log(testnet);
 util.log('');
 util.log(regtest);
-util.log('');
-util.log(segnet3);
-util.log('');
-util.log(segnet4);
-util.log('');
 util.log('');
 util.log('main hash: %s', main.rhash());
 util.log('main raw: %s', main.toRaw().toString('hex'));
@@ -125,12 +114,3 @@ util.log('testnet raw: %s', testnet.toRaw().toString('hex'));
 util.log('');
 util.log('regtest hash: %s', regtest.rhash());
 util.log('regtest raw: %s', regtest.toRaw().toString('hex'));
-util.log('');
-util.log('segnet3 hash: %s', segnet3.rhash());
-util.log('segnet3 raw: %s', segnet3.toRaw().toString('hex'));
-util.log('');
-util.log('segnet4 hash: %s', segnet4.rhash());
-util.log('segnet4 raw: %s', segnet4.toRaw().toString('hex'));
-util.log('');
-util.log('btcd simnet hash: %s', btcd.rhash());
-util.log('btcd simnet raw: %s', btcd.toRaw().toString('hex'));
